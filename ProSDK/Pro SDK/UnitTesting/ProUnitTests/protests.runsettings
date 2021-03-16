@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <MaxCpuCount>0</MaxCpuCount>
+    <ResultsDirectory>.\TestResults</ResultsDirectory>
+    <TargetPlatform>x64</TargetPlatform>
+    <TargetFrameworkVersion>Framework45</TargetFrameworkVersion>
+    <TestSessionTimeout>9000000</TestSessionTimeout>
+	<ExecutionThreadApartmentState>STA</ExecutionThreadApartmentState>
+  </RunConfiguration>
+
+  <LoggerRunSettings>
+    <Loggers>
+      <Logger friendlyName="trx" enabled="true" />
+    </Loggers>
+  </LoggerRunSettings>
+
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="blame" enabled="True" />
+    </DataCollectors>
+  </DataCollectionRunSettings>
+
+  <MSTest>
+    <TestTimeout>90000</TestTimeout>
+    <MapInconclusiveToFailed>false</MapInconclusiveToFailed>
+    <CaptureTraceOutput>true</CaptureTraceOutput>
+    <DeleteDeploymentDirectoryAfterTestRunIsComplete>true</DeleteDeploymentDirectoryAfterTestRunIsComplete>
+    <DeploymentEnabled>false</DeploymentEnabled>
+    <AssemblyResolution>
+      <Directory path="C:\Program Files\ArcGIS\Pro\bin\" includeSubDirectories="true"/>
+    </AssemblyResolution>
+  </MSTest>
+</RunSettings>

@@ -1,0 +1,61 @@
+﻿<ArcGIS defaultAssembly="GISTech_Settings.dll" defaultNamespace="GISTech_Settings" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{e53fbe6e-9a60-4579-93b2-671684710dc6}" version="1.0" desktopVersion="2.7.26828">
+    <Name>GISTech_Settings</Name>
+    <Description>GISTech_Settings demo</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>mallo</Author>
+    <Company>Esri Nederland</Company>
+    <Date>02-Mar-2021 13:10:55</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+         Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <dependencies>
+    <dependency name="{c27ced2e-0c7a-4f4b-b4ab-d3d1bff073c0}" />
+  </dependencies>
+  <modules>
+    <insertModule id="GISTech_Settings_Module" className="Module1" autoLoad="true" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid an empty group-->
+        <group id="GISTech_Settings_Group" caption="GISTech 2021 Setting" appearsOnAddInTab="false" keytip="gs">
+          <!-- host controls within groups -->
+          <button refID="GISTech_Settings_btnTemperature" size="large" />
+          <button refID="GISTech_Settings_BtnTemperatureFromConfig" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="GISTech_Settings_btnTemperature" caption="Weer labelververs " className="BtnTemperatureFromSetting" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericRefresh16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericRefresh32.png" keytip="TS">
+          <tooltip heading="Tooltip Heading">
+			  Temperatuur Setting
+		      <disabledText>Het ophalen van de temperatuur is niet mogelijk</disabledText></tooltip>
+        </button>
+        <button id="GISTech_Settings_BtnTemperatureFromConfig" caption="Temperatuur Config" className="BtnTemperatureFromConfig" loadOnClick="true" smallImage="Images\registry-file.png" largeImage="Images\registry-file.png" keytip="TC">
+          <tooltip heading="Tooltip Heading">
+				Temperatuur Config
+				<disabledText>Het ophalen van de temperatuur is niet mogelijk</disabledText></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <updateModule refID="GISTech_PythonUsage_Module">
+      <tabs>
+        <updateTab refID="GISTech2021_Tab">
+          <insertGroup refID="GISTech_Settings_Group" insert="after" />
+        </updateTab>
+      </tabs>
+    </updateModule>
+  </modules>
+  <propertySheets>
+    <updateSheet refID="esri_core_optionsPropertySheet">
+      <insertPage id="GISTech_Settings_Controls_DamlSettings" caption="GISTech 2021 Settings" className="GISTech_Settings.Controls.DamlSettingsViewModel" group="Project">
+        <content className="GISTech_Settings.Controls.DamlSettingsView" />
+      </insertPage>
+    </updateSheet>
+  </propertySheets>
+  <backstage>
+    <insertTab id="GISTech_Settings_Tab_SettingsBackstageTab" caption="GISTech Settings" keytip="GS" className="GISTech_Settings.Tab.SettingsBackstageTabViewModel" insert="before" placeWith="esri_core_exitApplicationButton">
+      <content className="GISTech_Settings.Tab.SettingsBackstageTabView" />
+    </insertTab>
+  </backstage>
+</ArcGIS>

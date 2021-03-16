@@ -1,0 +1,42 @@
+﻿<ArcGIS defaultAssembly="GraphicsLayerDemo.dll" defaultNamespace="GraphicsLayerDemo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{8c4dacac-202f-4cd1-91c9-14422015cab6}" version="1.0" desktopVersion="2.7.26828">
+    <Name>GraphicsLayerDemo</Name>
+    <Description>GraphicsLayerDemo description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>bultje</Author>
+    <Company>Acme</Company>
+    <Date>2/1/2021 11:02:50 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <dependencies>
+    <dependency name="{c27ced2e-0c7a-4f4b-b4ab-d3d1bff073c0}" />
+  </dependencies>
+  <modules>
+    <insertModule id="GraphicsLayerDemo_Module" className="GLDemo" autoLoad="false" caption="Graphics Layer Demo">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs></tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid an empty group-->
+        <group id="GraphicsLayerDemo_Group" keytip="Add_graphic" caption="GraphicsLayer" appearsOnAddInTab="false">
+          <!-- host controls within groups -->
+          <tool refID="GraphicsLayerDemo_MouseInteraction" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="GraphicsLayerDemo_MouseInteraction" keytip="none" caption="Boter Kaas en Eieren!" className="MouseInteraction" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BexDog32.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/BexDog32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Activate to create graphics">Activate to create graphics<disabledText /></tooltip>
+        </tool>
+      </controls>
+    </insertModule>
+    <updateModule refID="GISTech_PythonUsage_Module">
+      <tabs>
+        <updateTab refID="GISTech2021_Tab">
+          <insertGroup refID="GraphicsLayerDemo_Group" insert="after" />
+        </updateTab>
+      </tabs>
+    </updateModule>
+  </modules>
+</ArcGIS>

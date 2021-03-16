@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GISTech_Settings", "GISTech_Settings\GISTech_Settings.csproj", "{E53FBE6E-9A60-4579-93B2-671684710DC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuienradarUI", "..\PlugInn\BuienRadarDataSource\BuienradarUI\BuienradarUI.csproj", "{718B66F9-B415-4868-AE29-930A3D262E5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuienRadarDataSource", "..\PlugInn\BuienRadarDataSource\BuienRadarDataSource\BuienRadarDataSource.csproj", "{82BAC7A0-EC8F-4571-A2C4-D3FA24C9A481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuienRadarSettings", "BuienRadarSettings\BuienRadarSettings.csproj", "{096B261B-A6E3-42C3-B5C0-76EBC193C1E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E53FBE6E-9A60-4579-93B2-671684710DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53FBE6E-9A60-4579-93B2-671684710DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53FBE6E-9A60-4579-93B2-671684710DC6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E53FBE6E-9A60-4579-93B2-671684710DC6}.Debug|x64.Build.0 = Debug|Any CPU
+		{E53FBE6E-9A60-4579-93B2-671684710DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53FBE6E-9A60-4579-93B2-671684710DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53FBE6E-9A60-4579-93B2-671684710DC6}.Release|x64.ActiveCfg = Release|Any CPU
+		{E53FBE6E-9A60-4579-93B2-671684710DC6}.Release|x64.Build.0 = Release|Any CPU
+		{718B66F9-B415-4868-AE29-930A3D262E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718B66F9-B415-4868-AE29-930A3D262E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718B66F9-B415-4868-AE29-930A3D262E5D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{718B66F9-B415-4868-AE29-930A3D262E5D}.Debug|x64.Build.0 = Debug|Any CPU
+		{718B66F9-B415-4868-AE29-930A3D262E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718B66F9-B415-4868-AE29-930A3D262E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{718B66F9-B415-4868-AE29-930A3D262E5D}.Release|x64.ActiveCfg = Release|Any CPU
+		{718B66F9-B415-4868-AE29-930A3D262E5D}.Release|x64.Build.0 = Release|Any CPU
+		{82BAC7A0-EC8F-4571-A2C4-D3FA24C9A481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82BAC7A0-EC8F-4571-A2C4-D3FA24C9A481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82BAC7A0-EC8F-4571-A2C4-D3FA24C9A481}.Debug|x64.ActiveCfg = Debug|x64
+		{82BAC7A0-EC8F-4571-A2C4-D3FA24C9A481}.Debug|x64.Build.0 = Debug|x64
+		{82BAC7A0-EC8F-4571-A2C4-D3FA24C9A481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82BAC7A0-EC8F-4571-A2C4-D3FA24C9A481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82BAC7A0-EC8F-4571-A2C4-D3FA24C9A481}.Release|x64.ActiveCfg = Release|x64
+		{82BAC7A0-EC8F-4571-A2C4-D3FA24C9A481}.Release|x64.Build.0 = Release|x64
+		{096B261B-A6E3-42C3-B5C0-76EBC193C1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{096B261B-A6E3-42C3-B5C0-76EBC193C1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{096B261B-A6E3-42C3-B5C0-76EBC193C1E0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{096B261B-A6E3-42C3-B5C0-76EBC193C1E0}.Debug|x64.Build.0 = Debug|Any CPU
+		{096B261B-A6E3-42C3-B5C0-76EBC193C1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{096B261B-A6E3-42C3-B5C0-76EBC193C1E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{096B261B-A6E3-42C3-B5C0-76EBC193C1E0}.Release|x64.ActiveCfg = Release|Any CPU
+		{096B261B-A6E3-42C3-B5C0-76EBC193C1E0}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C961F7AA-986F-462F-9019-A76EADD9FE3C}
+	EndGlobalSection
+EndGlobal

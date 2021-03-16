@@ -1,0 +1,46 @@
+﻿<ArcGIS defaultAssembly="PythonUsage.dll" defaultNamespace="PythonUsage" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{c27ced2e-0c7a-4f4b-b4ab-d3d1bff073c0}" version="1.0" desktopVersion="2.7.26828">
+    <Name>PythonUsage</Name>
+    <Description>Python gebruik in ArcGIS Pro demo</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>mallo</Author>
+    <Company>Esri Nederland</Company>
+    <Date>04-Mar-2021 10:34:15</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+         Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="GISTech_PythonUsage_Module" className="Module1" autoLoad="false" caption="Module1">
+      <tabs>
+        <tab id="GISTech2021_Tab" caption="GISTech 2021" keytip="GS">
+          <group refID="GISTech_PythonUsage_Group" />
+        </tab>
+      </tabs>
+      <groups>
+        <group id="GISTech_PythonUsage_Group" caption="GISTech 2021 Python" appearsOnAddInTab="false" keytip="gs">
+          <!-- host controls within groups -->
+          <button refID="PythonUsage_BtnPythonGPTool" size="large" />
+          <button refID="PythonUsage_PythonFilePane_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="PythonUsage_BtnPythonGPTool" caption="GP Buffer" className="BtnPythonGPTool" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeoprocessingToolboxPythonNew16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeoprocessingToolboxPythonNew32.png" keytip="P">
+          <tooltip heading="Tooltip Heading">Voer een buffer functie uit vanuit GP data
+		  <disabledText>
+			  Het is niet mogelijk om een buffer actie uit te voeren
+		  </disabledText></tooltip>
+        </button>
+        <button id="PythonUsage_PythonFilePane_ShowButton" caption="Show PythonFilePane" className="PythonFilePane_ShowButton" loadOnClick="true" smallImage="Images\Python.png" largeImage="Images\Python.png" keytip="PS">
+          <tooltip heading="Show Dockpane">Selecteer python file<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="PythonUsage_PythonFilePane" caption="Python Selectie" className="PythonFilePaneViewModel" dock="group" dockWith="esri_core_projectDockPane">
+          <content className="PythonFilePaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

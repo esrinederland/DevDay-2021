@@ -1,0 +1,51 @@
+﻿<ArcGIS defaultAssembly="GPSTracks.dll" defaultNamespace="GPSTracks" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{d988013f-4c8c-4221-ab7b-0127b4968bf7}" version="1.0" desktopVersion="2.7.26828">
+    <Name>GPSTracks</Name>
+    <Description>GPSTracks in ArcGIS Pro demo</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>mallo</Author>
+    <Company>Esri Nederland</Company>
+    <Date>05-Mar-2021 13:03:42</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+         Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <dependencies>
+    <dependency name="{c27ced2e-0c7a-4f4b-b4ab-d3d1bff073c0}" />
+  </dependencies>
+  <modules>
+    <insertModule id="GPSTracks_Module" className="Module1" autoLoad="true" caption="Module1">
+      <groups>
+        <group id="GPSTracks_Group" caption="GISTech 2021 GPS" appearsOnAddInTab="false" keytip="gp">
+          <!-- host controls within groups -->
+          <button refID="GPSTracks_BtnGPS" size="large" />
+          <button refID="GPSTracks_BtnAnimate" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="GPSTracks_BtnGPS" caption="GPS Track" className="BtnGPS" loadOnClick="true" smallImage="Images\GPX.png" largeImage="Images\GPX.png" keytip="BG">
+          <tooltip heading="Tooltip Heading">Start een GPS Track
+		    <disabledText>
+				Het is nu niet mogelijk om een GPS track te visualiseren
+		    </disabledText>
+		  </tooltip>
+        </button>
+        <button id="GPSTracks_BtnAnimate" caption="BtnAnimate" className="BtnAnimate" loadOnClick="true" smallImage="Images\MyRide.png" largeImage="Images\MyRide.png" keytip="BA">
+          <tooltip heading="Tooltip Heading">Maak een animatie van de GPS track
+		    <disabledText >
+				Het is nu niet mogelijk om een animatie te maken
+		    </disabledText>
+		  </tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <updateModule refID="GISTech_PythonUsage_Module">
+      <tabs>
+        <updateTab refID="GISTech2021_Tab">
+          <insertGroup refID="GPSTracks_Group" insert="after" />
+        </updateTab>
+      </tabs>
+    </updateModule>
+  </modules>
+</ArcGIS>

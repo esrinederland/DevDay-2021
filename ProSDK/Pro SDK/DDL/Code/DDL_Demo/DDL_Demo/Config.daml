@@ -1,0 +1,40 @@
+﻿<ArcGIS defaultAssembly="DDL_Demo.dll" defaultNamespace="DDL_Demo" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f348f254-783b-43f2-be67-51b0ffb201fb}" version="1.0" desktopVersion="2.7.26828">
+    <Name>DDL_Demo</Name>
+    <Description>DDL_Demo description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>bultje</Author>
+    <Company>Acme</Company>
+    <Date>3/3/2021 10:41:27 AM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <dependencies>
+    <dependency name="{c27ced2e-0c7a-4f4b-b4ab-d3d1bff073c0}" />
+  </dependencies>
+  <modules>
+    <insertModule id="DDL_Demo_Module" className="Module1" autoLoad="false" caption="Module1">
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid an empty group-->
+        <group id="DDL_Demo" caption="Data Definition Language" appearsOnAddInTab="false" keytip="d">
+          <!-- host controls within groups -->
+          <button refID="DDL_Demo_CreateFeatureClassButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="DDL_Demo_CreateFeatureClassButton" caption="Database aanmaken" className="CreateFeatureClassButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseAdd16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GeodatabaseAdd32.png" keytip="f">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <updateModule refID="GISTech_PythonUsage_Module">
+      <tabs>
+        <updateTab refID="GISTech2021_Tab">
+          <insertGroup refID="DDL_Demo" insert="after" />
+        </updateTab>
+      </tabs>
+    </updateModule>
+  </modules>
+</ArcGIS>

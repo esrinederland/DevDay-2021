@@ -1,0 +1,40 @@
+﻿<ArcGIS defaultAssembly="BuienradarUI.dll" defaultNamespace="BuienradarUI" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{718b66f9-b415-4868-ae29-930a3d262e5d}" version="1.0" desktopVersion="2.7.26828">
+    <Name>BuienradarUI</Name>
+    <Description>BuienradarUI description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>bultje</Author>
+    <Company>Acme</Company>
+    <Date>3/1/2021 3:45:57 PM</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <dependencies>
+    <dependency name="{c27ced2e-0c7a-4f4b-b4ab-d3d1bff073c0}" />
+  </dependencies>
+  <modules>
+    <insertModule id="BuienradarUI_Module" className="Module1" autoLoad="false" caption="Module1">
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid an empty group-->
+        <group id="BuienradarUI_Group" caption="Plugin datasource" appearsOnAddInTab="false" keytip="b">
+          <!-- host controls within groups -->
+          <button refID="BuienradarUI_ActualWeather" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="BuienradarUI_ActualWeather" caption="Weer" className="ActualWeather" loadOnClick="true" smallImage="Images/br-logo-square.png" largeImage="Images/br-logo-square.png" keytip="w">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
+      </controls>
+    </insertModule>
+    <updateModule refID="GISTech_PythonUsage_Module">
+      <tabs>
+        <updateTab refID="GISTech2021_Tab">
+          <insertGroup refID="BuienradarUI_Group" insert="after" />
+        </updateTab>
+      </tabs>
+    </updateModule>
+  </modules>
+</ArcGIS>

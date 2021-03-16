@@ -1,0 +1,39 @@
+﻿<ArcGIS defaultAssembly="UnitTesting.dll" defaultNamespace="UnitTesting" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{f7045391-89ee-42fa-88cf-27eec9c8ac04}" version="1.0" desktopVersion="2.7.26828">
+    <Name>UnitTesting</Name>
+    <Description>UnitTesting description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>mallo</Author>
+    <Company>Esri Nederland</Company>
+    <Date>04-Mar-2021 14:41:09</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="UnitTesting_Module" className="Module1" autoLoad="true" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="UnitTesting_Tab1" caption="unit test" keytip="U">
+          <group refID="UnitTesting_Group1" />
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="UnitTesting_Group1" caption="Test" appearsOnAddInTab="false" keytip="T">
+          <!-- host controls within groups -->
+          <button refID="UnitTesting_BtnTest" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="UnitTesting_BtnTest" caption="BtnTest" className="BtnTest" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonBlue32.png" keytip="bt">
+          <tooltip heading="Tooltip Heading">Test the distance
+		  <disabledText>Unable to test the distance</disabledText>
+		  </tooltip>
+        </button>
+      </controls>
+    </insertModule>
+  </modules>
+</ArcGIS>
