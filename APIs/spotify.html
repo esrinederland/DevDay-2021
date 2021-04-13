@@ -279,12 +279,12 @@
 
             // Spotify search song using city
             function getSongForCity(cityName) {
-
-                // Wait for a valid Spotify Token
-                if (!bearerToken){
-                    if (Date.now() < tokenExpires){
+                // Check if token is expired
+                if (Date.now() < tokenExpires){
                         generateToken();
                     };
+                // Wait for a valid Spotify Token
+                if (!bearerToken){
                     window.setTimeout(getSongForCity(cityName), 100);
                 }
                 else {
