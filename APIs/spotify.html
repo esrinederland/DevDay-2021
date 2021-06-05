@@ -22,8 +22,8 @@
     </style>
     <link rel="stylesheet"
         href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/css/calcite-web.min.css" />
-    <link rel="stylesheet" href="https://jsdev.arcgis.com/4.16/esri/themes/dark/main.css" />
-    <script src="https://jsdev.arcgis.com/4.16/"></script>
+    <link rel="stylesheet" href="https://jsdev.arcgis.com/4.19/esri/themes/dark/main.css" />
+    <script src="https://jsdev.arcgis.com/4.19/"></script>
     <style>
         @font-face {
             font-family: 'proxima_nova_rgregular';
@@ -108,23 +108,27 @@
             "esri/Map",
             "esri/views/MapView",
             "esri/widgets/Expand",
+            "esri/layers/FeatureLayer",
             "esri/layers/GraphicsLayer",
             "esri/Graphic",
+            "esri/tasks/support/Query",
             "esri/widgets/Locate", 
             "esri/widgets/Search",
             "esri/tasks/Locator",
-            "esri/request"
+            "esri/request",
+            "esri/config"
         ], function (
             Map,
-            MapView, Expand,
+            MapView, Expand, FeatureLayer,
             GraphicsLayer, Graphic,
+            Query,
             Locate, Search, Locator,
-            esriRequest
+            esriRequest, esriConfig
         ) {
+
             // Generate a Spotify token
             var bearerToken;
-            var tokenExpires;
-            if (!bearerToken || Date.now() < tokenExpires){
+            if (!bearerToken){
                 generateToken();
             };
 
@@ -211,24 +215,21 @@
                 getCityFromPoint(mapPoint);
             });
 
-
-            // Spotify generate token
+            // Spotify generate token (get from ArcGIS Feature Service)
             function generateToken() {
-                const tokenUrl = "https://accounts.spotify.com/api/token?grant_type=client_credentials";
-                var options = {
-                    headers: {
-                        "Authorization": "Basic MGViNTkwOWViYjI1NDlkYmE2MzJkYTQ0Y2EyZjVkOTg6MGM3NmIxZjUwMjEwNDJkMWE0NWNmN2YyYmUxMDVlNzU=",
-                        "Content-Type": "application/x-www-form-urlencoded",
-                        "Cookie": "__Host-device_id=AQBF14ySPE6o16JiWjJA83rrtrJk_kqVSVImBkHea-SaX_D4Z0HEiqwzkcB7Leyl8oeZLOm4G72UftvLpOFgVev8rFm5yhRlnMo"
-                    },
-                    method: "post",
-                    responseType: "json"
-                };
-                esriRequest(tokenUrl, options).then(function(response){
 
-                    // Store token and validity in global variables
-                    bearerToken = response.data.access_token;
-                    tokenExpires = Date.now() + response.data.expires_in;
+                esriConfig.apiKey = "AAPK62a6966e236e480f99a787ed3b27d7a30OkPBWaUfzMubD76eLRE0gT05z8EWRwvUtVtN5fmGKmtukX9K1IaapFiAC9m-5cp";
+
+                const layer = new FeatureLayer({
+                    url: "https://services9.arcgis.com/VFpG6hOzsWy7Gvmg/arcgis/rest/services/SpotifyTokenLayer/FeatureServer/0"
+                });
+
+                const query = new Query();
+                query.where = "1=1";
+                query.outFields = [ "*" ];
+
+                layer.queryFeatures(query).then(function(results){
+                    bearerToken = results.features[0].attributes["SpotifyToken"];
                 });
             };
 
@@ -279,13 +280,9 @@
 
             // Spotify search song using city
             function getSongForCity(cityName) {
-                // Check if token is expired
-                if (Date.now() < tokenExpires){
-                        generateToken();
-                    };
                 // Wait for a valid Spotify Token
                 if (!bearerToken){
-                    window.setTimeout(getSongForCity(cityName), 100);
+                    generateToken();
                 }
                 else {
                     var searchUrl = "https://api.spotify.com/v1/search";
