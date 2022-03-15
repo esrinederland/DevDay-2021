@@ -178,6 +178,7 @@
 
                     // Get song for given city
                     getSongForCity(cityName);
+                    AddAction("spotifySearch", cityName);
                 }
             });
             view.ui.add(search, "top-right");
@@ -254,6 +255,7 @@
 
                     // Get song for given city
                     getSongForCity(cityName);
+                    AddAction("spotifyMapClick", cityName);
                 });
             };
 
@@ -369,5 +371,5 @@
         <div class="esri-logo-reverse"></div>
     </div>
 </body>
-
+<script src="https://esrinederland.github.io/CoolMonitor/CoolMonitor.js"></script>
 </html>
